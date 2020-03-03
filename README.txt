@@ -1,6 +1,7 @@
 ***************************************************************
 * Arduino PID Library - Version 1.2.1
 * by Brett Beauregard <br3ttb@gmail.com> brettbeauregard.com
+* modified by Jack Davis <c@jtd.me>
 *
 * This Library is licensed under the MIT License
 ***************************************************************
