@@ -7,7 +7,6 @@
 
 #ifndef PID_v1_h
 #define PID_v1_h
-#define LIBRARY_VERSION	1.2.1
 
 #if ARDUINO >= 100
 #include "Arduino.h"
@@ -15,7 +14,7 @@
 #include "WProgram.h"
 #endif
 
-
+#define LIBRARY_VERSION 1.3.0
 
 
 template<typename Tinput = double, typename Toutput = double, typename Tgain = double>

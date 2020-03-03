@@ -1,5 +1,5 @@
 ***************************************************************
-* Arduino PID Library - Version 1.2.1
+* Arduino PID Library - Version 1.3.0
 * by Brett Beauregard <br3ttb@gmail.com> brettbeauregard.com
 * modified by Jack Davis <c@jtd.me>
 *
