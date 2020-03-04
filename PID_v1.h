@@ -1,5 +1,5 @@
 /**********************************************************************************************
- * Arduino PID Library - Version 1.2.1
+ * Arduino PID Library - Version 1.3.0
  * by Brett Beauregard <br3ttb@gmail.com> brettbeauregard.com
  *
  * This Library is licensed under the MIT License
@@ -17,8 +17,16 @@
 #define LIBRARY_VERSION 1.3.0
 
 
+// forward declare PIDt, that-way typedef PID can be declared up front
 template<typename Tinput = double, typename Toutput = double, typename Tgain = double>
-class PID {
+class PIDt;
+
+// declare PID with default double arguments for backwards compat
+typedef PIDt<> PID;
+
+// declare the template class as PIDt, allowing the PID typedef to maintain backwards compat. to 1.2.1
+template<typename Tinput, typename Toutput, typename Tgain>
+class PIDt {
 
   public:
 
@@ -37,7 +45,7 @@ class PID {
      *    The parameters specified here are those for for which we can't set up
      *    reliable defaults, so we need to have the user set them.
      ***************************************************************************/
-    PID(
+    PIDt(
         Tinput *const Input, Toutput *const Output, Toutput *const Setpoint,
         const Tgain &Kp, const Tgain &Ki, const Tgain &Kd,
         const uint8_t POn, const uint8_t ControllerDirection
@@ -62,10 +70,10 @@ class PID {
      *    To allow backwards compatability for v1.1, or for people that just want
      *    to use Proportional on Error without explicitly saying so
      ***************************************************************************/
-    PID(Tinput *const Input, Toutput *const Output, Toutput *const Setpoint,
+    PIDt(Tinput *const Input, Toutput *const Output, Toutput *const Setpoint,
         const Tgain &Kp, const Tgain &Ki, const Tgain &Kd,
         const uint8_t ControllerDirection
-    ) : PID(Input, Output, Setpoint, Kp, Ki, Kd, P_ON_E, ControllerDirection)
+    ) : PIDt(Input, Output, Setpoint, Kp, Ki, Kd, P_ON_E, ControllerDirection)
     {
     }
 
